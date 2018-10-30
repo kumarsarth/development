@@ -36,6 +36,19 @@ class Jio implements Sim{
 		System.out.println("u r calling from jio");	
 	}
 }
+
+class docomo implements Sim{
+
+	@Override
+	public void data() {
+		System.out.println("docomo data u r using");
+	}
+
+	@Override
+	public void calling() {
+		System.out.println("u r calling from docomo");	
+	}
+}
 class BeanFactory{
 	public static Sim m1(String str)
 	{
@@ -43,6 +56,8 @@ class BeanFactory{
 			return new Airtel();
 		else if(str.equals("vodafone"))
 			return new Vodafone();
+		else if(str.equals("docomo"))
+			return new docomo();
 		return new Jio();
 	}
 }
